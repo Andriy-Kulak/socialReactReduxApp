@@ -9,12 +9,6 @@ export function fetchFacebookPage(pageId){
 	const url = `https://graph.facebook.com/v2.6/${pageId}?fields=id,name,picture,fan_count,posts&access_token=${API_ID}|${APP_SECRET}`;
 	const request = axios.get(url); // this ajax returns a promise
 	
-
-	/*return (dispatch) => {
-		request.then(({data}) => {
-			dispatch({ type: 'FETCH_FB_DATA', payload: data})
-		});
-	};*/
 	console.log('Request', request);
 
 	return {
@@ -24,3 +18,12 @@ export function fetchFacebookPage(pageId){
 	// this takes any promise, resolves it and creates a new action to send it to reducer
 
 }
+
+
+/*
+	return (dispatch) => {
+		request.then(({data}) => {
+			dispatch({ type: FETCH_FB_DATA, payload: data})
+		});
+	};
+*/
