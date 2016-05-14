@@ -13,7 +13,7 @@ export function fetchFacebookPage(pageId){
 
 	return {
 		type: FETCH_FB_DATA,
-		payload: request.data //optional paraamter that goes into action that can provide some additional info
+		payload: request //optional paraamter that goes into action that can provide some additional info
 	};
 	// this takes any promise, resolves it and creates a new action to send it to reducer
 

@@ -5,20 +5,28 @@ class FacebookList extends Component {
 	renderFacebook(fbData){
 		console.log('in FBlist', fbData);
 		console.log('in FBlist name', fbData.name);
+		const name = fbData.name;
 
-		/*return (
-			<tr>
-				<td>{fbData.posts}</td>
-				<td>{fbData.name}</td>
-				<td>{fbData.id}</td>
-				<td>{fbData.picture}</td>
+		console.log('TEST constant nae', name);
+
+		const posts = fbData.posts;
+
+		console.log('TEST constant posts', posts);
+		const id = fbData.id;
+		const fanCount = fbData.fan_count;
+
+		return (
+			<tr key={name}>
+				
+				<td>{name}</td>
+				<td>{id}</td>
+				<td>{fanCount}</td>
 			</tr>
-			);*/
+			);
 	}
 
 
-	render() {
-		console.log('Render', this.props.social);
+	render() {		
 		return (
 			<table className="table table-hover">
 				<thead>
@@ -30,13 +38,13 @@ class FacebookList extends Component {
 					</tr>
 				</thead>
 				<tbody>
-					
+				{this.props.social.map(this.renderFacebook)}
 				</tbody>
 			</table>
 			);
 	}
 }
-// {this.props.social.map(this.renderFacebook)}
+// 
 
 // id,name,picture,fan_count,posts
 
