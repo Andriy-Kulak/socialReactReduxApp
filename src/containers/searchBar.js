@@ -26,6 +26,7 @@ class SearchBar extends Component {
 		event.preventDefault();
 
 		this.props.fetchFacebookPage(this.state.term);
+		console.log('searchBar term', this.state.term);
 		this.setState({ term: ''}); // will clear value after user triggers the function
 	}
 

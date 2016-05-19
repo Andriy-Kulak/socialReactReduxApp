@@ -1,12 +1,10 @@
-
-
 import { FETCH_FB_DATA } from '../actions/index';
 
 export default function(state = [], action) {
 	switch (action.type) {
 		case FETCH_FB_DATA:
 
-			console.log('Reducer TEST', action);
+			//console.log('Reducer TEST', action);
 
 			return [ action.payload.data, ...state];// we are creating a new state array with this line.
 			// another alternative-> return [ action.payload.data, ...state];

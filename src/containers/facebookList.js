@@ -3,30 +3,25 @@ import { connect } from 'react-redux';
 
 class FacebookList extends Component {
 	renderFacebook(fbData){
-		console.log('in FBlist', fbData);
-		console.log('in FBlist name', fbData.name);
+		
 		const name = fbData.name;
-
-		console.log('TEST constant nae', name);
-
 		const posts = fbData.posts;
-
-		console.log('TEST constant posts', posts);
 		const id = fbData.id;
+		const image = fbData.picture.data.url;
 		const fanCount = fbData.fan_count;
 
 		return (
 			<tr key={name}>
-				
-				<td>{name}</td>
 				<td>{id}</td>
+				<td>{name}</td>
+				<td><img src={image} /></td>
 				<td>{fanCount}</td>
 			</tr>
 			);
 	}
 
-
 	render() {		
+		
 		return (
 			<table className="table table-hover">
 				<thead>
@@ -35,16 +30,19 @@ class FacebookList extends Component {
 						<th>Name</th>
 						<th>Picture</th>
 						<th>Fan Count</th>
+						
 					</tr>
 				</thead>
 				<tbody>
-				{this.props.social.map(this.renderFacebook)}
+					{this.props.social.map(this.renderFacebook)}
+
+
 				</tbody>
 			</table>
 			);
 	}
 }
-// 
+// <!---->
 
 // id,name,picture,fan_count,posts
 
