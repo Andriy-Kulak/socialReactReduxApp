@@ -12,6 +12,14 @@ class Signin extends Component {
 		this.props.signinUser({email, password});
 	}
 
+	renderAlert(){
+		if(this.props.errorMessage) {
+			<div className="alert aler-danger">
+				<strong>Oops!</strong> {this.props.errorMessage}
+			</div>
+		}
+	}
+
 	render() {
 
 		//handleSubmit is a built in redux-form helper to bind ui to values
@@ -26,17 +34,21 @@ class Signin extends Component {
 					<label>Password:</label>
 					<input {...password} className="form-control" />
 				</fieldset>
-
+				{this.renderAlert()}
 				<button action="submit" className="btn btn-primary">Sign in</button>
 			</form>
 		);
 	}
 }
 
+function mapStateToProps(state) {
+	return {errorMessage: state.auth.error};
+}
+
 export default reduxForm({
 	form: 'signin',
 	fields: ['email', 'password']
-}, null, actions)(Signin);
+}, mapStateToProps, actions)(Signin);
 
 
 //fields: ['email', 'password', 'firstName', 'lastName', 'company', 'fbHandler']
