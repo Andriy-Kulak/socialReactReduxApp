@@ -1,7 +1,7 @@
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchFacebookPage } from  '../actions/socialAction';
+import { fetchFacebookPage } from  '../actions/social.action';
 
 class SearchBar extends Component {
 	constructor(props) {

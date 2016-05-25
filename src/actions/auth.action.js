@@ -2,7 +2,7 @@ import axios from 'axios';
 import { browserHistory } from 'react-router';
 import { AUTH_USER,
 		AUTH_ERROR
- 		} from './typesAuth';
+ 		} from './authTypes.action';
 
 const ROOT_URL = 'http://localhost:3090';
 

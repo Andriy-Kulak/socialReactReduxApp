@@ -1,4 +1,4 @@
-import { FETCH_FB_DATA } from '../actions/socialAction';
+import { FETCH_FB_DATA } from '../actions/social.action';
 
 export default function(state = [], action) {
 	switch (action.type) {
