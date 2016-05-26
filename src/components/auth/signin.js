@@ -14,14 +14,16 @@ class Signin extends Component {
 
 	renderAlert(){
 		if(this.props.errorMessage) {
-			<div className="alert aler-danger">
+			console.log("TEST123")
+			return (
+			<div className="alert alert-danger">
 				<strong>Oops!</strong> {this.props.errorMessage}
 			</div>
+			);
 		}
 	}
 
 	render() {
-
 		//handleSubmit is a built in redux-form helper to bind ui to values
 		const { handleSubmit, fields: {email, password}} = this.props;
 
@@ -30,9 +32,10 @@ class Signin extends Component {
 				<fieldset className="form-group">
 					<label>Email:</label>
 					<input {...email} className="form-control" />
-
+				</fieldset>
+        		<fieldset className="form-group">
 					<label>Password:</label>
-					<input {...password} className="form-control" />
+					<input {...password} type="password" className="form-control" />
 				</fieldset>
 				{this.renderAlert()}
 				<button action="submit" className="btn btn-primary">Sign in</button>

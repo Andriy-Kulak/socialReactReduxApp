@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 import { AUTH_USER,
+		UNAUTH_USER,
 		AUTH_ERROR
  		} from './authTypes.action';
 
@@ -25,15 +26,13 @@ export function signinUser({email, password}) {
 
 			})
 			.catch(() => {
-				console.log('FAIL');
+				
+					//if request is bad...
+
+					// - Show an error to the user
+					dispatch(authError('Bad Login Info!'));
 			})
-	}
-
-
-	//if request is bad...
-
-	// - Show an error to the user
-	
+	}	
 }
 
 export function authError(error){
@@ -43,5 +42,11 @@ export function authError(error){
 		};
 }
 
+export function signoutUser(){
+	localStorage.removeItem('token');
+	return {
+		type: UNAUTH_USER
+	}
+}
 // importan rule: action creator alwasys returns an object (which is what we call an action) except when you use
 // redux thunk - you can return another function
