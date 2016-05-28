@@ -4,9 +4,9 @@ import * as actions from '../actions/auth.action'
 
 
 class SocialDashboard extends Component {
-	componentWillMount() {
-		this.props.fetchMessage();
-	}
+	// componentWillMount() {
+	// 	this.props.fetchMessage();
+	// }
 
 	render() {
 		return(

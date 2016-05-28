@@ -1,11 +1,10 @@
 {
-  "name": "redux-simple-starter",
+  "name": "socialApp",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Social App",
   "main": "index.js",
-  "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js & nodemon ./server/index.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -37,6 +36,18 @@
     "redux": "^3.0.4",
     "redux-form": "^5.2.3",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "jwt-simple": "^0.5.0",
+    "mongoose": "^4.4.17",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.9.2",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.0.0",
+    "passport-local": "^1.0.0"
   }
 }
+
+

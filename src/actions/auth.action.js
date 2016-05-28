@@ -80,6 +80,8 @@ export function signoutUser(){
 	}
 }
 
+//testing to make sure we can make authenticated request to our auth backend
+/*
 export function fetchMessage() {
 	return function(dispatch) {
 		axios.get(ROOT_URL, {
@@ -89,6 +91,6 @@ export function fetchMessage() {
 				console.log("TEST", response);
 			});
 	}
-}
+}*/
 // importan rule: action creator alwasys returns an object (which is what we call an action) except when you use
 // redux thunk - you can return another function
