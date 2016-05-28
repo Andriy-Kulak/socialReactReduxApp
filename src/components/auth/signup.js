@@ -3,12 +3,27 @@ import { reduxForm } from 'redux-form';
 import * as actions from '../../actions/auth.action';
 
 class Signup extends Component {
+	handleFormSubmit(formProps) {
+		// Call action creator to sign up user!
+		this.props.signupUser(formProps);
+	}
+
+	renderAlert() {
+		if (this.props.errorMessage) {
+			return (
+				<div className="alert alert-danger">
+					<strong>Oops!</strong> {this.props.errorMessage}
+				</div>
+			)
+		}
+	}
+
 	render() {
 		const { handleSubmit, fields: {firstName, lastName, companyName,
 			fbHandle, email, password, passwordConfirm}} = this.props;
 
 		return (
-			<form>
+			<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
 				<fieldset className="form-group">
 						<label>First Name:</label>
 						<input {...firstName} className="form-control" />
@@ -28,20 +43,46 @@ class Signup extends Component {
 				<fieldset className="form-group">
 						<label>Email:</label>
 						<input {...email} className="form-control" />
+				{email.touched && email.error && <div className="error">{email.error}</div>}
 				</fieldset>
 				<fieldset className="form-group">
 						<label>Password:</label>
 						<input {...password} className="form-control" type="password"/>
+				{password.touched && password.error && <div className="error">{password.error}</div>}
 				</fieldset>
 				<fieldset className="form-group">
 						<label>Confirm Password:</label>
 						<input {...passwordConfirm} className="form-control" />
-				</fieldset>
 
+				{passwordConfirm.touched && passwordConfirm.error && <div className="error">{passwordConfirm.error}</div>}
+				</fieldset>
+				{this.renderAlert()}
 				<button action="submit" className="btn btn-primary">Signup!</button>
 			</form>
 		);
 	}
+}
+
+//form validation rules
+function validate(formProps) {
+	const errors = {}
+
+	// TODOx: iterate over with forEach loop for remaining values to prevent repetitive code as well as the form itself
+
+	// TODOx: make sure email/First and Last Names are stored in node, most likely need to change controller
+
+	if (!formProps.email) { errors.email = 'Please enter an email';}
+	if (!formProps.password) { errors.password = 'Please enter a password';}
+	
+	if (formProps.password !== formProps.passwordConfirm) {
+		errors.passwordConfirm = 'Passwords must match';
+	}
+
+	return errors;
+}
+
+function mapStateToProps(state) {
+	return { errorMessage:state.auth.error}
 }
 
 export default reduxForm({
@@ -54,5 +95,7 @@ export default reduxForm({
 		'email',
 		'password',
 		'passwordConfirm'
-		]
-})(Signup);
+		],
+	validate: validate
+}, mapStateToProps, actions)(Signup);
+//actions is always the third argument
