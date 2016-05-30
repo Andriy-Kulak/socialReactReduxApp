@@ -10,7 +10,9 @@ export default class App extends Component {
           <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
           <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css" />
         <Header2 />
-      	{this.props.children}
+        <div className="appContent">
+      	 {this.props.children}
+        </div>
       </div>
     );
   }

@@ -36,9 +36,7 @@ export function signinUser({email, password}) {
 	}	
 }
 
-function successAuth(){
 	// TODOx: put all repetitive signup and signin code in here
-}
 
 export function signupUser({firstName, lastName, companyName, fbHandle, email, password}) {
 	return function(dispatch) {

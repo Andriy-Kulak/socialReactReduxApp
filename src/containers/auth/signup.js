@@ -69,8 +69,6 @@ function validate(formProps) {
 
 	// TODOx: iterate over with forEach loop for remaining values to prevent repetitive code as well as the form itself
 
-	// TODOx: make sure email/First and Last Names are stored in node, most likely need to change controller
-
 	if (!formProps.email) { errors.email = 'Please enter an email';}
 	if (!formProps.password) { errors.password = 'Please enter a password';}
 	

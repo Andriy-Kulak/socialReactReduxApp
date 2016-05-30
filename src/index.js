@@ -33,6 +33,9 @@ if (token) {
 	store.dispatch({ type: AUTH_USER });
 }
 
+//If you want specific pages to require auth, add 'RequireAuth'
+//<Route path="social" component={RequireAuth(SocialDashboard)} />
+
 // Routes
 ReactDOM.render(
   <Provider store={store}>
@@ -44,7 +47,7 @@ ReactDOM.render(
     		<Route path="signin" component={Signin} />
     		<Route path="signout" component={Signout} />
     		<Route path="signup" component={Signup} />
-    		<Route path="social" component={RequireAuth(SocialDashboard)} />
+    		<Route path="social" component={SocialDashboard} />
     	</Route>
     </Router>
   </Provider>

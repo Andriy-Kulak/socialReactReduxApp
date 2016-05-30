@@ -20,8 +20,7 @@ class FacebookList extends Component {
 			);
 	}
 
-	render() {		
-		
+	render() {	
 		return (
 			<table className="table table-hover">
 				<thead>
@@ -29,31 +28,19 @@ class FacebookList extends Component {
 						<th>Id</th>
 						<th>Name</th>
 						<th>Picture</th>
-						<th>Fan Count</th>
-						
+						<th>Fan Count</th>						
 					</tr>
 				</thead>
 				<tbody>
 					{this.props.social.map(this.renderFacebook)}
-
-
 				</tbody>
 			</table>
 			);
 	}
 }
-// <!---->
-
-// id,name,picture,fan_count,posts
 
 function mapStateToProps({ social }) {
 	return { social }; // same as { social : social } 
 }
-
-/* function above is the same as this
-function mapStateToProps(state) {
-	return { social: state.social }
-}
-*/
 
 export default connect(mapStateToProps)(FacebookList);
