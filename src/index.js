@@ -7,14 +7,16 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import reduxThunk from 'redux-thunk';
 import { AUTH_USER } from './actions/authTypes.action';
 
-//components
-import App from './components/app';
-import Signin from './components/auth/signin';
-import Signup from './components/auth/signup';
-import Signout from './components/auth/signout';
-import SocialDashboard from './components/socialDashboard';
-import Home from './components/home'
-import RequireAuth from './components/auth/requireAuth'; //use for any page that requires auth
+//containers
+import App from './containers/app';
+import Signin from './containers/auth/signin';
+import Signup from './containers/auth/signup';
+import Signout from './containers/auth/signout';
+import SocialDashboard from './containers/socialDashboard';
+import Home from './containers/home';
+import About from './containers/about';
+import Contact from './containers/contact';
+import RequireAuth from './containers/auth/requireAuth'; //use for any page that requires auth
 
 //index reducer
 import reducers from './reducers/index.reducer';
@@ -37,6 +39,8 @@ ReactDOM.render(
   	<Router history={browserHistory}>
     	<Route path="/" component={App}>
     		<IndexRoute component={Home} />
+    		<Route path="about" component={About} />
+    		<Route path="contact" component={Contact} />
     		<Route path="signin" component={Signin} />
     		<Route path="signout" component={Signout} />
     		<Route path="signup" component={Signup} />
