@@ -6,7 +6,6 @@ class Signin extends Component {
 
 	// used to take supplied inputs and check auth
 	handleFormSubmit({email, password}) {
-		console.log(email, password);
 
 		//Need something to log user in
 		this.props.signinUser({email, password});

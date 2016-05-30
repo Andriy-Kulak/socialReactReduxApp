@@ -35,7 +35,7 @@ class FacebookList extends Component {
 					{this.props.social.map(this.renderFacebook)}
 				</tbody>
 			</table>
-			);
+		);
 	}
 }
 
