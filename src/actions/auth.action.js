@@ -78,6 +78,7 @@ export function signoutUser(){
 	}
 }
 
+<<<<<<< HEAD
 //testing to make sure we can make authenticated request to our auth backend
 /*
 export function fetchMessage() {
@@ -90,5 +91,7 @@ export function fetchMessage() {
 			});
 	}
 }*/
+=======
+>>>>>>> 2c9f6715772a7252d4b7889b50e09b460bd40a61
 // importan rule: action creator alwasys returns an object (which is what we call an action) except when you use
 // redux thunk - you can return another function
