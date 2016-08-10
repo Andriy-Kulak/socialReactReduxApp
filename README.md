@@ -6,4 +6,4 @@
 <p>2) run 'mongod' in a separate command tab</p>
 <p>3) npm start</p>
 <p>4) open browser in http://localhost:8080/</p>
-<p>5) Enter - ATT - into search for sample API GET Request.</p>
+<p>5) in Social tab, Enter - ATT - into search field to get sample API GET Request.</p>
